@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/estilo.css">
+    <link rel="icon" href="./assets/Logo/in.png">
+    <title>Login</title>
+</head>
+
+<body>
+
+
+
+    <div class="SusLogin">
+        <div class="sub-suslogin">
+            <span class="text">Login com suscesso!!</span>
+        </div>
+    </div>
+
+
+
+    <div class="janela-all mediascreen">
+
+
+
+
+        <!--------------------------------------------------------------------------------------->
+        <!------------        janela de navegação entre Login é register          --------------->
+        <!--------------------------------------------------------------------------------------->
+
+        <div class="selec-nav">
+            <div class="selec-login text-selec" onclick="btShowLoginRegister(0)"><span class="text-selec">Entrar</span>
+            </div>
+            <div class="selec-cadastrar text-selec" onclick="btShowLoginRegister(1)">
+                <span class="text-selec">Cadastre-se</span>
+            </div>
+        </div>
+
+
+
+        <div class="janela-login mediascreen">
+
+
+
+
+            <!--------------------------------------------------------------------------------------->
+            <!----------------               Display do entrar (LOGIN)             ------------------>
+            <!--------------------------------------------------------------------------------------->
+
+
+            <div class="display-login mediascreen">
+
+                <img class="logo-img" src="./assets/Logo/cabin.png" alt="Login">
+
+
+                <div class="info-login">
+
+                    <div class="login-place-user all-div-place">
+
+                        <input type="text" class="email-login errorUserInput"
+                            onfocusout="movePlaceOut('.place-user-login', this)"
+                            onfocusin="movePlaceSin('.place-user-login')">
+
+                        <div class="all-Text-Place place-user-login">E-mail</div>
+
+                        <div class="errorUserText">Não foi possível encontrar sua conta.</div>
+
+                    </div>
+
+
+
+                    <div class="login-place-password all-div-place">
+
+                        <input id="showPassword" type="password" class="password-login errorPasswordInput"
+                            onfocusout="movePlaceOut('.place-password-login', this)"
+                            onfocusin="movePlaceSin('.place-password-login')">
+
+                        <div class="all-Text-Place place-password-login">Senha</div>
+
+                        <div class="errorPasswordText">Senha incorreta.</div>
+
+                    </div>
+
+
+                    <!------------- Mostrar e ocultar: senha (LOGIN)  --------------------->
+
+                    <div class="viewPassword-login" onclick="viewPasswordLogin()">
+                        <img width="30px" class="mostrar-login" src="./assets/checkBoxPasswordView/eye.png"
+                            alt="Mostrar senha">
+                        <img width="30px" class="ocultar-login" src="./assets/checkBoxPasswordView/blind.png"
+                            alt="Ocultar senha">
+                    </div>
+
+
+
+                    <a href="#">Esqueceu a senha?</a>
+
+                </div>
+
+
+                <button class="bt-login" onclick="veryUsername()">ENTRAR</button>
+
+            </div>
+
+
+            <!--------------------------------------------------------------------------------------->
+            <!--------------------        Display do Cadastro (register)          ------------------->
+            <!--------------------------------------------------------------------------------------->
+
+
+            <div class="display-register mediascreen">
+
+
+
+                <!------------------------------- input do Usuário (cadastrar)------------------------------------->
+
+                <!-- <div class="register-place-user all-div-place">
+
+                    <input type="text" class="createUsername" onfocusout="movePlaceOut('.place-user', this)"
+                        onfocusin="movePlaceSin('.place-user')">
+                    <div class="all-Text-Place place-user">Usuário</div>
+                    <div class="textUserErr">Este nome de usuário já está em uso.</div>
+
+                </div> -->
+
+
+
+                <!------------------------------- input do e-mail (cadastrar)------------------------------------->
+
+
+                <div class="register-place-email all-div-place">
+
+                    <input type="text" class="createEmail" onfocusout="movePlaceOut('.place-email', this)"
+                        onfocusin="movePlaceSin('.place-email')">
+                    <div class="all-Text-Place place-email">Seu endereço de e-mail</div>
+                    <div class="textEmailErr">Este email já está em uso.</div>
+                    <div class="textEmailErrForm">O endereço de e-mail está mal formatado.</div>
+
+                </div>
+
+
+                <!------------------------------- input da senha (cadastrar) ------------------------------------->
+
+
+                <div class="input-password ">
+                    <div class="register-place-password all-div-place">
+
+                        <input class="showPasswordRegister registerPassword" type="password"
+                            onfocusout="movePlaceOut('.place-password', this)"
+                            onfocusin="movePlaceSin('.place-password')">
+                        <div class="all-Text-Place place-password ">Criar senha</div>
+                        <div class="error6caract">A senha deve ter pelo menos 6 caracteres.</div>
+
+
+                    </div>
+
+                    <!------------------------------- input da confirmar senha (cadastrar) ------------------------------------->
+
+                    <div class="register-place-Confirm all-div-place">
+
+                        <input class="showPasswordRegister confirmPassword errorConfirmPasswordInput" type="password"
+                            onfocusout="movePlaceOut('.place-Confirm', this)"
+                            onfocusin="movePlaceSin('.place-Confirm')">
+
+                        <div class="all-Text-Place place-Confirm">Confirmar senha</div>
+                        <div class="errorConfirmPasswordText">Senha diferente.</div>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <!------------- Mostrar e ocultar: senha (REGISTER)  --------------------->
+
+                <div class="viewPassword-register" onclick="viewPasswordRegister()">
+                    <img width="30px" class="mostrar-register" src="./assets/checkBoxPasswordView/eye.png"
+                        alt="Mostrar senha">
+                    <img width="30px" class="ocultar-register" src="./assets/checkBoxPasswordView/blind.png"
+                        alt="Ocultar senha">
+                </div>
+
+
+
+                <button class="bt-register" onclick="createConta()">Cadastrar</button>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <script src="./scripts/Login-Styles.js"> </script>
+
+</body>
+
+</html>

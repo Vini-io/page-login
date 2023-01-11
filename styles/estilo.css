@@ -1,0 +1,466 @@
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Mono&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    .SusLogin {
+        width: 100%;
+        min-height: 100vh;
+        background-color: rgba(0, 0, 0, 0.85);
+        position: absolute;
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+
+    }
+
+    .sub-suslogin {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        height: 200px;
+        background-color: rgb(85, 12, 13);
+        border-radius: 70px;
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+        font-weight: 600;
+        position: relative;
+        animation: heigth 2s;
+        overflow: hidden;
+        box-shadow: 2px 2px 100px 20px rgb(244, 72, 72);
+    }
+
+    .text {
+        position: absolute;
+        animation-delay: -700ms;
+        text-shadow: 0px 0px 20px rgba(243, 243, 243, 0.98);
+    }
+
+    @keyframes heigth {
+        from {
+
+            height: 0px;
+        }
+    }
+
+
+    .logo-img{
+       width: 90px;
+       user-select: none;
+       /* position: absolute; */
+    }
+
+
+    /* ------------------------------------------------------------------------------------------------------------------ */
+    /* -----------------------------            Fundo (background)            -------------------- --------------------- */
+    /* ------------------------------------------------------------------------------------------------------------------ */
+
+
+    body {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("../assets/background/wave-haikei.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        animation: onda 5s infinite alternate ease-in-out;
+    }
+
+    @keyframes onda {
+        100% {
+            background-position: 15% 80%;
+        }
+    }
+
+
+    /* ------------------------------------------------------------------------------------------------------------------ */
+    /* -----------------------------            janela de navegação entre Login é register         --------------------- */
+    /* ------------------------------------------------------------------------------------------------------------------ */
+
+
+    .selec-nav {
+        display: flex;
+        width: 100%;
+        height: 60px;
+        color: white;
+        border: 2px solid white;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+
+    }
+
+    .text-selec {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Ubuntu', sans-serif;
+        letter-spacing: 2px;
+        font-weight: 600;
+        font-size: 2rem;
+        cursor: pointer;
+        transition: 200ms;
+    }
+
+
+    .selec-login {
+        border-top-left-radius: 30px;
+        width: 50%;
+        height: 60px;
+        transition: 300ms;
+        border-right: 2px solid white;
+        user-select: none;
+    }
+
+    .selec-cadastrar {
+        border-top-right-radius: 30px;
+        width: 50%;
+        height: 60px;
+        transition: 300ms;
+        user-select: none;
+
+    }
+
+    .selec-login:hover,
+    .selec-cadastrar:hover {
+        background-color: #ff7272;
+    }
+
+
+    /* ------------------------------------------------------------------------------------------------------------------ */
+    /* -----------------------------               Janelas                 ---------------------------------------------- */
+    /* ------------------------------------------------------------------------------------------------------------------ */
+
+
+    .janela-all {
+
+        width: 500px;
+        height: 450px;
+    }
+
+    .janela-login {
+        position: relative;
+
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: rgba(243, 243, 243, 0.90);
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border: 2px solid white;
+    }
+
+
+
+
+    /* ---------------------------------------------------------------------------------------------------------------------------------------------- */
+    /* -----------------------------                   Display do entrar (LOGIN)                  --------------------------------------------------- */
+    /* ---------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+    .display-login {
+        position: absolute;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        width: 500px;
+        height: 450px;
+        transition: 0.5s;
+        left: 0;
+        right: 0;
+
+    }
+
+    .info-login {
+        position: relative;
+        height: 158px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    a {
+        font-family: 'Roboto Mono', monospace;
+        font-weight: 600;
+        font-size: 0.8rem;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.649);
+        transition: 100ms;
+    }
+
+    a:hover {
+        color: rgb(72, 109, 244);
+    }
+
+
+    .bt-login,
+    .bt-register {
+        background-color: rgb(244, 72, 72);
+        color: white;
+        width: 50%;
+        padding: 20px;
+        border-radius: 30px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        letter-spacing: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .bt-login:hover {
+        color: rgb(85, 12, 13);
+        box-shadow: 2px 2px 20px 1px rgb(137, 23, 25);
+        width: 55%;
+        letter-spacing: 10px;
+    }
+
+    /* error de usuario*/
+
+    .showErrorUserText {
+
+        color: red;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 0.7rem;
+
+    }
+
+    .showErrorUserInput {
+        border: 2px solid rgba(255, 0, 0, 0.45);
+
+    }
+
+    .errorUserText {
+        position: absolute;
+        display: none;
+    }
+
+
+    /* error de senha */
+
+
+    .showErrorPasswordText {
+        color: red;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 0.7rem;
+    }
+
+    .showErrorPasswordInput {
+        border: 2px solid rgba(255, 0, 0, 0.45);
+    }
+
+    .errorPasswordText {
+        position: absolute;
+        display: none;
+    }
+
+
+
+    /*---------- Mostrar e ocultar: senha (LOGIN) -------------------*/
+
+
+
+
+    .viewPassword-login {
+        position: absolute;
+        top:75px;
+        left: 357px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+
+
+    }
+
+    .ocultar-login {
+        display: none;
+    }
+
+
+
+    /* ---------------------------------------------------------------------------------------------------------------------------------------------- */
+    /* -----------------------------        Display do Cadastro (register)                 --------------------------------------------------- */
+    /* ---------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+    .textUserErr, .textEmailErr, .textEmailErrForm{
+        display: none;
+        color: rgba(255, 0, 0, 0.729);
+        font-family: 'Open Sans', sans-serif;
+        font-size: 0.7rem;
+        margin-top: 1px;
+    }
+
+ 
+
+
+
+
+
+    .display-register {
+        position: relative;
+        width: 500px;
+        height: 450px;
+        display: flex;
+        transition: 0.5s;
+        left: 500px;
+        right: 0;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+
+
+    .input-password {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 115px;
+    }
+
+
+
+    input {
+        background: none;
+        border: 2px solid rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        width: 300px;
+        border-radius: 5px;
+
+
+    }
+
+
+    input:focus {
+        outline: none;
+        border: 2px solid rgb(72, 109, 244);
+    }
+
+
+    .bt-register:hover {
+        color: rgb(85, 12, 13);
+        box-shadow: 2px 2px 20px 1px rgb(137, 23, 25);
+        width: 45%;
+        letter-spacing: 10px;
+    }
+
+
+    .all-div-place {
+        position: relative;
+    }
+
+
+    .all-Text-Place {
+        pointer-events: none;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 0.8rem;
+        color: rgba(0, 0, 0, 0.8);
+        background: none;
+        height: 20px;
+        padding: 0 3px;
+        transition: 180ms;
+        border-radius: 30%;
+    }
+
+
+
+    /* mostrar senha */
+
+    .viewPassword-register {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        right: 65px;
+        bottom: 180px;
+        cursor: pointer;
+    }
+
+    .ocultar-register {
+        display: none;
+    }
+
+
+    /* style verificar senha  */
+
+
+    .errorConfirmPasswordText {
+        display: none;
+        position: absolute;
+        color: red;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 0.7rem;
+    }
+
+   
+    .showErrorConfirmPasswordInput {
+        border: 2px solid rgba(255, 0, 0, 0.45);
+    }
+
+
+
+    .error6caract {
+        display: none;
+        position: absolute;
+        color: red;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 0.7rem;
+    }
+
+  
+
+
+
+    /* --------------------------------------------------------------------------------------------------------------------------- */
+    /* -----------------------------                         MediaScreen                 ----------------------------------------- */
+    /* --------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+    .mediascreen {
+        transition: 300ms;
+    }
+
+    @media only screen and (max-width: 700px) {
+        .mediascreen {
+            width: 350px;
+        }
+
+        .text-selec {
+            font-size: 1.5rem;
+        }
+
+
+        .viewPassword-login {
+
+            top: 110px;
+            left: 320px;
+
+        }
+        .viewPassword-register {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            right: 26px;
+            bottom: 110px;
+            cursor: pointer;
+        }
+    }
